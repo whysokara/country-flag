@@ -48,13 +48,13 @@ function MyComponent() {
 // if it's equal to then only return the items that match
 // if not return All the countries
           */
-      if (item.region == filterParam) {
+      if (item.region === filterParam) {
         return searchParam.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
           );
         });
-      } else if (filterParam == "All") {
+      } else if (filterParam === "All") {
         return searchParam.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
@@ -86,7 +86,9 @@ function MyComponent() {
                           */
               onChange={(e) => setQ(e.target.value)}
             />
-            <span className="sr-only" style={{paddingLeft: '20px'}}>Search countries here</span>
+            <span className="sr-only" style={{ paddingLeft: "20px" }}>
+              Search countries here
+            </span>
           </label>
 
           <div className="select">
